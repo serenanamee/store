@@ -1,0 +1,30 @@
+<h2>New book</h2>
+
+<% if @book.errors.any?%>
+<ul>
+  <%@boook.errors.full_messages.each do |message|%>
+    <li><%= message%></li>
+  <%end%>
+</ul>
+<%end%>
+
+<%=form_for @book do |f|%>
+
+<div>
+<%= f.label :title %>
+<%= f.text_field :title %>
+</div>
+
+<div>
+<%= f.label :description %>
+<%= f.text_area :description %>
+</div>
+
+<div>
+<%= f.label :publish_date %>
+<%= f.date_field :publish_date %>
+</div>
+
+<%= f.submit%>
+
+<%end%>

@@ -1,0 +1,20 @@
+
+<h1>Books</h1>
+
+  <%= link_to 'New', new_book_path %>
+
+
+
+<ul>
+<% @books.each do |book| %>
+  <%= link_to book.title, book_path(book.id)%>
+  <li>
+      <%= link_to 'Edit', edit_book_path(book.id)%>
+      <%= link_to 'Delete', book_path(book.id), method: 'delete'%>
+
+  </li>
+</ul>
+
+
+  
+<% end %>
